@@ -33,4 +33,4 @@ def test_delete_pet():
 def test_get_deleted_pet():
 	print("Getting pet..."+str(pet_id))
 	response=petstore_queries.get_pet_by_id(pet_id)
-	assert response.status_code==404, "Expected status 404 but received {}".format(repsonse.status_code)
+	assert response.status_code==404, "Expected status 404 but received {}".format(response.status_code)
