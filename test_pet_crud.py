@@ -25,3 +25,12 @@ def test_update_pet():
 	assert response.status_code==200, "Expected status 200 but received {}".format(response.status_code)
 	assert response.json()['name']==new_pet_name, "Expected pet name to be {} but received {}".format(new_pet_name,response.json()['name'])
 
+def test_delete_pet():
+	print("Deleting pet..."+str(pet_id))
+	response=petstore_queries.delete_pet(pet_id)
+	assert response.status_code==200, "Expected status 200 but received {}".format(response.status_code)
+
+def test_get_deleted_pet():
+	print("Getting pet..."+str(pet_id))
+	response=petstore_queries.get_pet_by_id(pet_id)
+	assert response.status_code==404, "Expected status 404 but received {}".format(repsonse.status_code)
