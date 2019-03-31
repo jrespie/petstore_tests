@@ -9,6 +9,27 @@ def create_pet(pet_id,pet_name):
 	petInfo={
 		"id": pet_id,
 		"name": pet_name,
+		"photoUrls": [
+			"string"
+		],
+		"status": "available"
+	}
+	return requests.post(BASE_URL,json=petInfo)
+
+def create_pet_without_name(pet_id):
+	petInfo={
+		"id": pet_id,
+		"photoUrls": [
+			"string"
+		],
+		"status": "available"
+	}
+	return requests.post(BASE_URL,json=petInfo)
+
+def create_pet_without_photo_urls(pet_id,pet_name):
+	petInfo={
+		"id": pet_id,
+		"name": pet_name,
 		"status": "available"
 	}
 	return requests.post(BASE_URL,json=petInfo)

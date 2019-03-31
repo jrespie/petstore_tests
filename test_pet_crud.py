@@ -1,3 +1,5 @@
+#test a basic create-read-update-delete flow
+
 import pytest
 import petstore_queries
 from faker import Faker
